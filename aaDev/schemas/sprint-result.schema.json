@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "sprint_id",
+    "generated_at_utc",
+    "repository_commit",
+    "planned_tasks",
+    "task_reports",
+    "audit_reports",
+    "accepted_tasks",
+    "blocked_tasks",
+    "failed_tasks",
+    "quality_gaps",
+    "outstanding_product_decisions",
+    "summary",
+    "recommendation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "sprint_id": {
+      "const": "SPRINT-001"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repository_commit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "planned_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "task_reports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_reports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accepted_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "failed_tasks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outstanding_product_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommendation": {
+      "enum": [
+        "continue",
+        "approve_with_conditions",
+        "hold",
+        "needs_product_owner_decision"
+      ]
+    }
+  }
+}
